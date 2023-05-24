@@ -4,50 +4,52 @@
 }
 
 <body class="image1">
-    <div class="container">
-        <div class="col-sm" style="background-color:white;opacity: 0.8;">
-            <a asp-controller="ClassRoom" asp-action="Create" class="btn btn-sm btn-danger">
-                <i class="fas fa-plus fa-3 btn-sm" aria-hidden="true" style="font-size:25px;color:mediumaquamarine"></i>
-                ثبت نام کنید
-            </a>
-        </div>
+    <div class="row">
         <div>
             <div class="col-sm" style="background-color:white;opacity: 0.8;">
-                @{
-                    if (Model != null && Model.Count() > 0)
-                    {
-                        <div class="table-responsive">
-                            <table class="table table-striped table-hover">
-                                <tbody>
-                                    @foreach (var item in Model)
-                                    {
-                                        <tr>
-                                            <td>شناسه : @item.Id</td>
-                                            <td>نام : @item.FirstName</td>
-                                            <td>نام خانوادگی : @item.LastName</td>
-                                            <td>تاریخ تولد : @item.BirhDate</td>
-                                            <td>شماره تلفن : @item.PhoneNumber</td>
-                                            <td>جنسیت : @Html.DisplayFor(x=>item.Gender)</td>
-                                            <td>رده سنی : @Html.DisplayFor(x=> item.AgeRange)</td>
-                                            <td dir="rtl"> تاریخ ثبت نام : @item.CreateDate</td>
-                                            <td>نام باشگاه : @item.SchoolName</td>
-                                            <td>
-                                                <a href="/ClassRoom/Edit?id=@item.Id" class="btn btn-info table-responsive" style="width:120px;">
-                                                    <i class="fas fa-edit" style="font-size:25px;color:red;"></i>
-                                                    ویرایش
-                                                </a>
-                                                <a asp-controller="ClassRoom" asp-action="Delete" asp-route-id="@item.Id" class="table-responsive btn btn-danger" style="width:120px;">
-                                                    <i class="fas fa-trash fa-3" aria-hidden="true" style="font-size:25px;color:aqua"></i>
-                                                    حذف
-                                                </a>
-                                            </td>
-                                        </tr>
-                                    }
-                                </tbody>
-                            </table>
-                        </div>
+                <a asp-controller="ClassRoom" asp-action="Create" class="btn btn-sm btn-danger">
+                    <i class="fas fa-plus fa-3 btn-sm" aria-hidden="true" style="font-size:25px;color:mediumaquamarine"></i>
+                    ثبت نام کنید
+                </a>
+            </div>
+            <div>
+                <div class="col-sm" style="background-color:white;opacity: 0.8;">
+                    @{
+                        if (Model != null && Model.Count() > 0)
+                        {
+                            <div>
+                                <table class="table table-striped table-hover">
+                                    <tbody>
+                                        @foreach (var item in Model)
+                                        {
+                                            <tr>
+                                                <td>شناسه : @item.Id</td>
+                                                <td>نام : @item.FirstName</td>
+                                                <td>نام خانوادگی : @item.LastName</td>
+                                                <td>تاریخ تولد : @item.BirhDate</td>
+                                                <td>شماره تلفن : @item.PhoneNumber</td>
+                                                <td>جنسیت : @Html.DisplayFor(x=>item.Gender)</td>
+                                                <td>رده سنی : @Html.DisplayFor(x=> item.AgeRange)</td>
+                                                <td dir="rtl"> تاریخ ثبت نام : @item.CreateDate</td>
+                                                <td>نام باشگاه : @item.SchoolName</td>
+                                                <td>
+                                                    <a href="/ClassRoom/Edit?id=@item.Id" class="btn btn-info table-responsive" style="width:120px;">
+                                                        <i class="fas fa-edit" style="font-size:25px;color:red;"></i>
+                                                        ویرایش
+                                                    </a>
+                                                    <a asp-controller="ClassRoom" asp-action="Delete" asp-route-id="@item.Id" class="table-responsive btn btn-danger" style="width:120px;">
+                                                        <i class="fas fa-trash fa-3" aria-hidden="true" style="font-size:25px;color:aqua"></i>
+                                                        حذف
+                                                    </a>
+                                                </td>
+                                            </tr>
+                                        }
+                                    </tbody>
+                                </table>
+                            </div>
+                        }
                     }
-                }
+                </div>
             </div>
         </div>
     </div>

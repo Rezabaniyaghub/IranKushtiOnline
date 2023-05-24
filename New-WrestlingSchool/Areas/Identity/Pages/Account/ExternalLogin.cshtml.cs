@@ -83,7 +83,9 @@ namespace New_WrestlingSchool.Areas.Identity.Pages.Account
             /// </summary>
             [Required]
             [EmailAddress]
+            [Display(Name = "ایمیل")]
             public string Email { get; set; }
+           
         }
         
         public IActionResult OnGet() => RedirectToPage("./Login");
