@@ -1,0 +1,64 @@
+﻿@model SchoolModel
+@{
+    string Message = ViewBag.Message;
+}
+@if (!string.IsNullOrWhiteSpace(Message))
+{
+    <div class="alert alert-danger col-md-3">
+        <span> با موفقیت ویرایش حذف نشد </span>
+        <br />
+        @Message
+    </div>
+}
+<form action="/School/Delete" method="post" class=" container col-lg-12 col-md-6 col-sm-12 offset-lg-4 offset-md-1 offset-sm-0">
+    <input type="hidden" name="@nameof(Model.Id)" value="@Model.Id" />
+    <div class="col-md-12">
+        <div class="row col-md-3">
+            <div class="input-group mb-3">
+                <div class="input-group-prepend">
+                    <span class="input-group-text" id="inputGroup-sizing-sm"> نام باشگاه</span>
+                </div>
+                <input type="text" class="form-control" asp-for="Name" disabled aria-label="Name" aria-describedby="inputGroup-sizing-sm" />
+                <span asp-validation-for="Name" class="text-danger"></span>
+            </div>
+        </div>
+        <div class="row col-md-3">
+            <div class="input-group mb-3">
+                <div class="input-group-prepend">
+                    <span class="input-group-text" id="inputGroup-sizing-sm"> شماره تلفن</span>
+                </div>
+                <input type="tel" class="form-control" asp-for="PhoneNumber" disabled aria-label="PhoneNumber" aria-describedby="inputGroup-sizing-sm" />
+                <span asp-validation-for="PhoneNumber" class="text-danger"></span>
+            </div>
+        </div>
+        <div class="row col-md-3">
+            <div class="input-group mb-3">
+                <div class="input-group-prepend">
+                    <span class="input-group-text" id="inputGroup-sizing-sm"> آدرس</span>
+                </div>
+                <input type="text" class="form-control" asp-for="Address" disabled aria-label="Address" aria-describedby="inputGroup-sizing-sm" />
+                <span asp-validation-for="Address" class="text-danger"></span>
+            </div>
+        </div>
+        <div class="row col-md-3">
+            <div class="input-group mb-3">
+                <div class="input-group-prepend">
+                    <span class="input-group-text" id="inputGroup-sizing-sm"> ظرفیت</span>
+                </div>
+                <input type="text" class="form-control" asp-for="Capacity" disabled aria-label="Capacity" aria-describedby="inputGroup-sizing-sm" />
+                <span asp-validation-for="Address" class="text-danger"></span>
+            </div>
+        </div>
+        <div class="col-md-3 form-group">
+            <button type="submit" class="btn btn-sm btn-primary btn-md" data-toggle="tooltip" data-placement="right" title="حذف">
+                <i class="fas fa-trash fa-3 btn-sm" aria-hidden="true"
+                   style="font-size:20px;color:aqua">
+                </i>
+                حذف
+            </button>
+        </div>
+    </div>
+</form>
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}

@@ -1,0 +1,32 @@
+﻿@using Microsoft.AspNetCore.Identity
+@inject SignInManager<IdentityUser> SignInManager
+@inject UserManager<IdentityUser> UserManager
+
+<ul class="navbar-nav" dir="rtl">
+    @if (SignInManager.IsSignedIn(User))
+    {
+        <li class="nav-item" dir="rtl">
+            <a class="nav-link text-dark" asp-area="Identity" asp-page="/Account/Manage/Index" title="Manage">سلام @User.Identity?.Name!</a>
+        </li>
+        <li class="nav-item">
+            <form class="form-inline" asp-area="Identity" asp-page="/Account/Logout" asp-route-returnUrl="@Url.Action("Index", "Home", new { area = "" })">
+                <button type="submit" class="nav-link btn btn-link text-dark">خروج</button>
+            </form>
+        </li>
+    }
+    else
+    {
+        <li class="nav-item">
+            <a class="nav-link text-dark btn-outline-light" style="border-radius:20%" asp-area="Identity" asp-page="/Account/Register">
+                ثبت نام
+                <img src="~/images/icon/icons8-login-30.png" style="width:25px;height:25px;" />
+            </a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link text-dark btn-outline-light" style="border-radius:20%" asp-area="Identity" asp-page="/Account/Login">
+                وارد شدن
+                <img src="~/images/icon/icons8-login-48.png" style="width:25px;height:25px;" />
+            </a>
+        </li>
+    }
+</ul>

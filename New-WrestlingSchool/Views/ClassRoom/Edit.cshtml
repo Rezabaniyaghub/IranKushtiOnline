@@ -1,0 +1,106 @@
+﻿@model ClassRoomModel
+@{
+    string Message = ViewBag.Message;
+    if (!string.IsNullOrWhiteSpace(Message))
+    {
+        <div class="alert alert-danger col-md-3">
+            <span> با موفقیت ویرایش نشد </span>
+            <br />
+            @Message
+        </div>
+    }
+}
+
+<form action="/ClassRoom/Edit" method="post" asp-antiforgery="true" class="container col-lg-12 col-md-6 col-sm-12 offset-lg-4 offset-md-1 offset-sm-0">
+    <input type="hidden" asp-for="Id" />
+    <input type="hidden" asp-for="CreateDate" />
+    <div class="row col-md-3 ">
+        <div class="input-group mb-3">
+            <div class="input-group-prepend">
+                <span class="input-group-text" id="inputGroup-sizing-sm">نام</span>
+            </div>
+            <input type="text" asp-for="FirstName" class="form-control" aria-label="FirstName" aria-describedby="inputGroup-sizing-sm" />
+            <span asp-validation-for="FirstName" class="text-danger"></span>
+        </div>
+    </div>
+    <div class="row col-md-3">
+        <div class="input-group mb-3">
+            <div class="input-group-prepend">
+                <span class="input-group-text" id="inputGroup-sizing-sm">نام خانوادگی</span>
+            </div>
+            <input type="text" asp-for="LastName" class="form-control" aria-label="LastName" aria-describedby="inputGroup-sizing-sm" />
+            <span asp-validation-for="LastName" class="text-danger"></span>
+        </div>
+    </div>
+    <div class="row col-md-3">
+        <div class="input-group mb-3">
+            <div class="input-group-prepend">
+                <span class="input-group-text" id="inputGroup-sizing-sm">تاریخ تولد</span>
+            </div>
+            <input type="date" asp-for="BirhDate" class="form-control" aria-label="BirhDate" aria-describedby="inputGroup-sizing-sm" />
+            <span asp-validation-for="BirhDate" class="text-danger"></span>
+        </div>
+    </div>
+    <div class="row col-md-3">
+        <div class="input-group mb-3">
+            <div class="input-group-prepend">
+                <span class="input-group-text" id="inputGroup-sizing-sm">شماره تلفن</span>
+            </div>
+            <input type="tel" asp-for="PhoneNumber" class="form-control" aria-label="PhoneNumber" aria-describedby="inputGroup-sizing-sm" />
+            <span asp-validation-for="PhoneNumber" class="text-danger"></span>
+        </div>
+    </div>
+    <div class="row col-md-3">
+        <div class="input-group mb-3">
+            <div class="input-group-prepend">
+                <span class="input-group-text" id="inputGroup-sizing-sm">کشور</span>
+            </div>
+            <input type="text" asp-for="Country" class="form-control" aria-label="Country" aria-describedby="inputGroup-sizing-sm" />
+            <span asp-validation-for="Country" class="text-danger"></span>
+        </div>
+    </div>
+    <div class="row col-md-3">
+        <div class="input-group mb-3">
+            <div class="input-group-prepend">
+                <span class="input-group-text" id="inputGroup-sizing-sm">نام باشگاه</span>
+            </div>
+            <select asp-for="SchoolId" asp-items="@Model.SchoolSelectList" class="form-control" aria-label="SchoolId" aria-describedby="inputGroup-sizing-sm"></select>
+            <span asp-validation-for="SchoolId" class="text-danger"></span>
+        </div>
+    </div>
+    <div class="row col-md-3">
+        <div class="input-group mb-3">
+            <div class="input-group-prepend">
+                <span class="input-group-text" id="inputGroup-sizing-sm"> رده سنی</span>
+                <select asp-for="AgeRange" class="form-control aria-label=" AgeRange" aria-describedby="inputGroup-sizing-sm">
+                    <span asp-validation-for="AgeRange" class="text-danger"></span>
+                    <option value="1">نونهالان</option>
+                    <option value="2">نوجوانان</option>
+                    <option value="3">بزرگسالان</option>
+                </select>
+            </div>
+        </div>
+    </div>
+    <div class="row col-md-6">
+        <div class="input-group mb-3">
+            <div class="input-group-prepend">
+                <span class="input-group-text" id="inputGroup-sizing-sm"> جنسیت</span>
+                <select asp-for="Gender" class="form-control aria-label=" Gender" aria-describedby="inputGroup-sizing-sm">
+                    <span asp-validation-for="Gender" class="text-danger"></span>
+                    <option value="1">مرد</option>
+                    <option value="2">زن</option>
+                    <option value="3">سایر</option>
+                </select>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-3 form-group">
+        <button type="submit" class="btn btn-primary btn-md" style="top:40px" data-toggle="tooltip" data-placement="right" title="ویرایش">
+            <i class="fas fa-edit" style="font-size:25px;color:red;"></i>
+            ویرایش
+        </button>
+    </div>
+</form>
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}

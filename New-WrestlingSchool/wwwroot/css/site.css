@@ -1,0 +1,115 @@
+﻿@font-face {
+    font-family: vazir;
+    font-style: normal;
+    font-weight: 100;
+    src: url("fonts/Vazir-Thin.eot");
+    src: url("fonts/Vazir-Thin.woff") format("woff"), url("fonts/Vazir-Thin.ttf") format("ttf"), url("fonts/Vazir-Thin.woff2") format("woff2");
+}
+
+@font-face {
+    font-family: vazir;
+    font-style: normal;
+    font-weight: 300;
+    src: url("fonts/Vazir-Light.eot");
+    src: url("fonts/Vazir-Light.woff") format("woff"), url("fonts/Vazir-Light.ttf") format("ttf"), url("fonts/Vazir-Light.woff2") format("woff2");
+}
+
+@font-face {
+    font-family: vazir;
+    font-style: normal;
+    font-weight: 400;
+    src: url("fonts/Vazir-Regular.eot");
+    src: url("fonts/Vazir-Regular.woff") format("woff"), url("fonts/Vazir-Regular.ttf") format("ttf"), url("fonts/Vazir-Regular.woff2") format("woff2");
+}
+
+@font-face {
+    font-family: vazir;
+    font-style: normal;
+    font-weight: 950;
+    src: url("fonts/Vazir-Black.eot");
+    src: url("fonts/Vazir-Black.woff") format("woff"), url("fonts/Vazir-Black.ttf") format("ttf"), url("fonts/Vazir-Black.woff2") format("woff2");
+}
+
+body {
+    font-family: vazir;
+    direction: rtl;
+}
+
+
+.image {
+    background-image: url('../images/backgrounds/b1.jpeg');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+
+.image1 {
+    background-image: url('../images/register/webp.net-resizeimage.jpg');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+
+.image2 {
+    background-image: url('../images/register/1138088.jpg');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: 1700px;
+}
+
+/* Tablet styles and devices with similar features */
+@media (max-width: 991px) {
+    /* Change the font size for the page title */
+    h1 {
+        font-size: 24px;
+    }
+
+    /* Setting the width of the table elements to be replaced on a column */
+    table td,
+    table th {
+        display: block;
+        width: 100%;
+    }
+
+    /* Changing the position of the buttons in each row */
+    .table-responsive table tr {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+        /* Change the size of the buttons in each row */
+        .table-responsive table tr a {
+            width: 100%;
+            margin-bottom: 10px;
+        }
+}
+
+/* Styles for mobile and small devices */
+@media (max-width: 767px) {
+    /* Change the font size for the page title */
+    h1 {
+        font-size: 20px;
+    }
+
+    /* Setting the width of the table elements to be replaced on a column*/
+    table td,
+    table th {
+        display: block;
+        width: 100%;
+    }
+
+    /* Changing the position of the buttons in each row */
+    .table-responsive table tr {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+        /* Change the size of the buttons in each row*/
+        .table-responsive table tr a {
+            width: 100%;
+            margin-bottom: 10px;
+        }
+}
