@@ -35,6 +35,8 @@ namespace New_WrestlingSchool.Areas.Identity.Pages.Account.Manage
         ///     This API supports the ASP.NET Core Identity default UI infrastructure and is not intended to be used
         ///     directly from your code. This API may change or be removed in future releases.
         /// </summary>
+        /// 
+        [Display(Name ="ایمیل")]
         public string Email { get; set; }
 
         /// <summary>
@@ -69,7 +71,7 @@ namespace New_WrestlingSchool.Areas.Identity.Pages.Account.Manage
             /// </summary>
             [Required]
             [EmailAddress]
-            [Display(Name = "New email")]
+            [Display(Name = "ایمیل جدید")]
             public string NewEmail { get; set; }
         }
 
@@ -125,14 +127,14 @@ namespace New_WrestlingSchool.Areas.Identity.Pages.Account.Manage
                     protocol: Request.Scheme);
                 await _emailSender.SendEmailAsync(
                     Input.NewEmail,
-                    "Confirm your email",
-                    $"Please confirm your account by <a href='{HtmlEncoder.Default.Encode(callbackUrl)}'>clicking here</a>.");
+                    "ایمیل خود را تایید کنید",
+                    $"لطفاً حساب خود را تائید کنید <a href='{HtmlEncoder.Default.Encode(callbackUrl)}'>اینجا کلیک کنید</a>.");
 
-                StatusMessage = "Confirmation link to change email sent. Please check your email.";
+                StatusMessage = "پیوند تأیید تغییر ایمیل ارسال شده. لطفا ایمیل خود را چک کنید.";
                 return RedirectToPage();
             }
 
-            StatusMessage = "Your email is unchanged.";
+            StatusMessage = "ایمیل شما بدون تغییر است.";
             return RedirectToPage();
         }
 
@@ -161,10 +163,10 @@ namespace New_WrestlingSchool.Areas.Identity.Pages.Account.Manage
                 protocol: Request.Scheme);
             await _emailSender.SendEmailAsync(
                 email,
-                "Confirm your email",
-                $"Please confirm your account by <a href='{HtmlEncoder.Default.Encode(callbackUrl)}'>clicking here</a>.");
+                "ایمیل خود را تایید کنید",
+                $"لطفاً حساب خود را تائید کنید <a href='{HtmlEncoder.Default.Encode(callbackUrl)}'>اینجا کلیک کنید</a>.");
 
-            StatusMessage = "Verification email sent. Please check your email.";
+            StatusMessage = "ایمیل تایید ارسال شد. لطفا ایمیل خود را چک کنید.";
             return RedirectToPage();
         }
     }

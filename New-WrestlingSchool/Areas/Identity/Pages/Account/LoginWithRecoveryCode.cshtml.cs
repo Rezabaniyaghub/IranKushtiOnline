@@ -54,7 +54,7 @@ namespace New_WrestlingSchool.Areas.Identity.Pages.Account
             [BindProperty]
             [Required]
             [DataType(DataType.Text)]
-            [Display(Name = "Recovery Code")]
+            [Display(Name = "کد بازیابی")]
             public string RecoveryCode { get; set; }
         }
 

@@ -42,6 +42,7 @@ namespace New_WrestlingSchool.Areas.Identity.Pages.Account
             /// </summary>
             [Required]
             [EmailAddress]
+            [Display(Name ="ایمیل")]
             public string Email { get; set; }
 
             /// <summary>
@@ -51,6 +52,7 @@ namespace New_WrestlingSchool.Areas.Identity.Pages.Account
             [Required]
             [StringLength(100, ErrorMessage = "The {0} must be at least {2} and at max {1} characters long.", MinimumLength = 6)]
             [DataType(DataType.Password)]
+            [Display(Name = "کلمه عبور")]
             public string Password { get; set; }
 
             /// <summary>
@@ -58,8 +60,8 @@ namespace New_WrestlingSchool.Areas.Identity.Pages.Account
             ///     directly from your code. This API may change or be removed in future releases.
             /// </summary>
             [DataType(DataType.Password)]
-            [Display(Name = "Confirm password")]
-            [Compare("Password", ErrorMessage = "The password and confirmation password do not match.")]
+            [Display(Name = "رمز عبور را تایید کنید")]
+            [Compare("کلمه عبور", ErrorMessage = "رمز عبور و رمز عبور تأیید مطابقت ندارند.")]
             public string ConfirmPassword { get; set; }
 
             /// <summary>
@@ -75,7 +77,7 @@ namespace New_WrestlingSchool.Areas.Identity.Pages.Account
         {
             if (code == null)
             {
-                return BadRequest("A code must be supplied for password reset.");
+                return BadRequest("یک کد برای بازنشانی رمز عبور باید ارائه شود.");
             }
             else
             {

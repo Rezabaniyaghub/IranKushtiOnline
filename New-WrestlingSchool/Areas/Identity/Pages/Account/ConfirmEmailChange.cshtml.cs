@@ -48,7 +48,7 @@ namespace New_WrestlingSchool.Areas.Identity.Pages.Account
             var result = await _userManager.ChangeEmailAsync(user, email, code);
             if (!result.Succeeded)
             {
-                StatusMessage = "Error changing email.";
+                StatusMessage = "خطا در تغییر ایمیل";
                 return Page();
             }
 
@@ -57,12 +57,12 @@ namespace New_WrestlingSchool.Areas.Identity.Pages.Account
             var setUserNameResult = await _userManager.SetUserNameAsync(user, email);
             if (!setUserNameResult.Succeeded)
             {
-                StatusMessage = "Error changing user name.";
+                StatusMessage = "خطا در تغییر نام کاربری";
                 return Page();
             }
 
             await _signInManager.RefreshSignInAsync(user);
-            StatusMessage = "Thank you for confirming your email change.";
+            StatusMessage = "از اینکه تغییر ایمیل خود را تأیید کردید متشکریم.";
             return Page();
         }
     }

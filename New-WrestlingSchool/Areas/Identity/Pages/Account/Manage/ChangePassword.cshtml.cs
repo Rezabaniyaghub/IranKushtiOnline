@@ -119,7 +119,7 @@ namespace New_WrestlingSchool.Areas.Identity.Pages.Account.Manage
 
             await _signInManager.RefreshSignInAsync(user);
             _logger.LogInformation("User changed their password successfully.");
-            StatusMessage = "Your password has been changed.";
+            StatusMessage = "گذر واژه شما تغییر کرده است.";
 
             return RedirectToPage();
         }

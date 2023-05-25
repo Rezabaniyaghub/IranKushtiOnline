@@ -69,6 +69,7 @@ namespace New_WrestlingSchool.Areas.Identity.Pages.Account
         ///     directly from your code. This API may change or be removed in future releases.
         /// </summary>
         [TempData]
+        [Display(Name = "پیغام خطا")]
         public string ErrorMessage { get; set; }
 
         /// <summary>

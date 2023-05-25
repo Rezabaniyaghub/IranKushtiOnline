@@ -89,12 +89,12 @@ namespace New_WrestlingSchool.Areas.Identity.Pages.Account.Manage
             var result = await _userManager.RemoveLoginAsync(user, loginProvider, providerKey);
             if (!result.Succeeded)
             {
-                StatusMessage = "The external login was not removed.";
+                StatusMessage = "ورود خارجی حذف نشد.";
                 return RedirectToPage();
             }
 
             await _signInManager.RefreshSignInAsync(user);
-            StatusMessage = "The external login was removed.";
+            StatusMessage = "ورود خارجی حذف شد.";
             return RedirectToPage();
         }
 
@@ -121,20 +121,20 @@ namespace New_WrestlingSchool.Areas.Identity.Pages.Account.Manage
             var info = await _signInManager.GetExternalLoginInfoAsync(userId);
             if (info == null)
             {
-                throw new InvalidOperationException($"Unexpected error occurred loading external login info.");
+                throw new InvalidOperationException($"هنگام بارگیری اطلاعات ورود به سیستم خارجی، خطای غیرمنتظره‌ای روی داد.");
             }
 
             var result = await _userManager.AddLoginAsync(user, info);
             if (!result.Succeeded)
             {
-                StatusMessage = "The external login was not added. External logins can only be associated with one account.";
+                StatusMessage = "ورود خارجی اضافه نشده است. ورودهای خارجی فقط می تواند با یک حساب مرتبط باشد.";
                 return RedirectToPage();
             }
 
             // Clear the existing external cookie to ensure a clean login process
             await HttpContext.SignOutAsync(IdentityConstants.ExternalScheme);
 
-            StatusMessage = "The external login was added.";
+            StatusMessage = "ورود خارجی اضافه شد.";
             return RedirectToPage();
         }
     }
