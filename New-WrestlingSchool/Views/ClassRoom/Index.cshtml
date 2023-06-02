@@ -1,56 +1,63 @@
 ﻿@model List<ClassRoomModel>
 @{
-    ViewData["Title"] = "لیست باشگاه ها";
+    ViewData["Title"] = "لیست اعضای باشگاه ها";
 }
 
 <body class="image1">
-    <div class="table-responsive">
-        <div class="row">
-            <div class="col-sm" style="background-color:white;opacity: 0.8;">
-                <a asp-controller="ClassRoom" asp-action="Create" class="btn btn-sm btn-danger">
-                    <i class="fas fa-plus fa-3 btn-sm" aria-hidden="true" style="font-size:25px;color:mediumaquamarine"></i>
-                    ثبت نام کنید
-                </a>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-sm" style="background-color:white;opacity: 0.8;">
-                @{
-                    if (Model != null && Model.Count() > 0)
-                    {
-                        <div class="table-responsive">
-                            <table class="table table-striped table-hover">
-                                <tbody>
-                                    @foreach (var item in Model)
-                                    {
-                                        <tr>
-                                            <td>شناسه : @item.Id</td>
-                                            <td>نام : @item.FirstName</td>
-                                            <td>نام خانوادگی : @item.LastName</td>
-                                            <td>متولد : @item.BirhDate</td>
-                                            <td>موبایل : @item.PhoneNumber</td>
-                                            <td>جنسیت : @Html.DisplayFor(x=>item.Gender)</td>
-                                            <td>رده سنی : @Html.DisplayFor(x=> item.AgeRange)</td>
-                                            <td dir="ltr">تاریخ ثبت نام : @item.CreateDate</td>
-                                            <td>نام باشگاه : @item.SchoolName</td>
-                                            <td>
-                                                <a href="/ClassRoom/Edit?id=@item.Id" class="btn btn-info table-responsive" style="width:120px;">
-                                                    <i class="fas fa-edit" style="font-size:25px;color:red;"></i>
-                                                    ویرایش
-                                                </a>
-                                                <a asp-controller="ClassRoom" asp-action="Delete" asp-route-id="@item.Id" class="table-responsive btn btn-danger" style="width:120px;">
-                                                    <i class="fas fa-trash fa-3" aria-hidden="true" style="font-size:25px;color:aqua"></i>
-                                                    حذف
-                                                </a>
-                                            </td>
-                                        </tr>
-                                    }
-                                </tbody>
-                            </table>
-                        </div>
-                    }
+    <div class="container">
+        <div class="col-sm" style="background-color:white;opacity: 0.8;">
+            <a asp-controller="ClassRoom" asp-action="Create" class="btn btn-sm btn-danger">
+                <i class="fas fa-plus fa-3 btn-sm" aria-hidden="true" style="font-size:25px;color:mediumaquamarine"></i>
+                ثبت نام کنید
+            </a>
+            @{
+                if (Model != null && Model.Count() > 0)
+                {
+                    <div>
+                        <table class="table table-striped table-hover">
+                            <thead>
+                                <tr>
+                                    <th>شناسه</th>
+                                    <th>نام</th>
+                                    <th>نام خانوادگی</th>
+                                    <th>تاریخ تولد</th>
+                                    <th>شماره تلفن</th>
+                                    <th>جنسیت</th>
+                                    <th>رده سنی</th>
+                                    <th>تاریخ ثبت نام</th>
+                                    <th>نام باشگاه</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                @foreach (var item in Model)
+                                {
+                                    <tr>
+                                        <td data-label="شناسه :">@item.Id</td>
+                                        <td data-label="نام :">  @item.FirstName</td>
+                                        <td data-label="نام خانوادگی :">  @item.LastName</td>
+                                        <td data-label="تاریخ تولد :">  @item.BirhDate</td>
+                                        <td data-label="شماره تلفن :"> @item.PhoneNumber</td>
+                                        <td data-label="جنسیت :">  @Html.DisplayFor(x => item.Gender)</td>
+                                        <td data-label="رده سنی :">  @Html.DisplayFor(x => item.AgeRange)</td>
+                                        <td data-label="تاریخ ثبت نام :">  @item.CreateDate</td>
+                                        <td data-label="نام باشگاه :">  @item.SchoolName</td>
+                                        <td>
+                                            <a href="/ClassRoom/Edit?id=@item.Id" class="btn btn-info table-responsive" style="width:120px;">
+                                                <i class="fas fa-edit" style="font-size:25px;color:red;"></i>
+                                                ویرایش
+                                            </a>
+                                            <a asp-controller="ClassRoom" asp-action="Delete" asp-route-id="@item.Id" class="table-responsive btn btn-danger" style="width:120px;">
+                                                <i class="fas fa-trash fa-3" aria-hidden="true" style="font-size:25px;color:aqua"></i>
+                                                حذف
+                                            </a>
+                                        </td>
+                                    </tr>
+                                }
+                            </tbody>
+                        </table>
+                    </div>
                 }
-            </div>
+            }
         </div>
     </div>
 </body>

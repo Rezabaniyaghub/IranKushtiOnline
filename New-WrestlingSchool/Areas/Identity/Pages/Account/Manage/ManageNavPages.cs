@@ -24,50 +24,57 @@ namespace  New_WrestlingSchool.Areas.Identity.Pages.Account.Manage
         ///     This API supports the ASP.NET Core Identity default UI infrastructure and is not intended to be used
         ///     directly from your code. This API may change or be removed in future releases.
         /// </summary>
+        [Display(Name = "ایمیل")]
         public static string Email => "Email";
-        [Display(Name ="ایمیل")]
+
 
         /// <summary>
         ///     This API supports the ASP.NET Core Identity default UI infrastructure and is not intended to be used
         ///     directly from your code. This API may change or be removed in future releases.
         /// </summary>
-        public static string ChangePassword => "ChangePassword";
         [Display(Name = "تغییر رمز عبور")]
+        public static string ChangePassword => "ChangePassword";
+
 
         /// <summary>
         ///     This API supports the ASP.NET Core Identity default UI infrastructure and is not intended to be used
         ///     directly from your code. This API may change or be removed in future releases.
         /// </summary>
-        public static string DownloadPersonalData => "DownloadPersonalData";
         [Display(Name = "دانلود داده های شخصی")]
+        public static string DownloadPersonalData => "DownloadPersonalData";
+
 
         /// <summary>
         ///     This API supports the ASP.NET Core Identity default UI infrastructure and is not intended to be used
         ///     directly from your code. This API may change or be removed in future releases.
         /// </summary>
-        public static string DeletePersonalData => "DeletePersonalData";
         [Display(Name = "حذف داده های شخصی")]
+        public static string DeletePersonalData => "DeletePersonalData";
+
 
         /// <summary>
         ///     This API supports the ASP.NET Core Identity default UI infrastructure and is not intended to be used
         ///     directly from your code. This API may change or be removed in future releases.
         /// </summary>
-        public static string ExternalLogins => "ExternalLogins";
         [Display(Name = "لینک های خارجی")]
+        public static string ExternalLogins => "ExternalLogins";
+
 
         /// <summary>
         ///     This API supports the ASP.NET Core Identity default UI infrastructure and is not intended to be used
         ///     directly from your code. This API may change or be removed in future releases.
         /// </summary>
-        public static string PersonalData => "PersonalData";
         [Display(Name = "اطلاعات شخصی")]
+        public static string PersonalData => "PersonalData";
+
 
         /// <summary>
         ///     This API supports the ASP.NET Core Identity default UI infrastructure and is not intended to be used
         ///     directly from your code. This API may change or be removed in future releases.
         /// </summary>
-        public static string TwoFactorAuthentication => "TwoFactorAuthentication";
         [Display(Name = "احراز هویت دو عاملی")]
+        public static string TwoFactorAuthentication => "TwoFactorAuthentication";
+
         /// <summary>
         ///     This API supports the ASP.NET Core Identity default UI infrastructure and is not intended to be used
         ///     directly from your code. This API may change or be removed in future releases.

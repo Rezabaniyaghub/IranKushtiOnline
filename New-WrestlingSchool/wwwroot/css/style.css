@@ -1,0 +1,10 @@
+﻿
+@media (min-width: 769px) {
+    .Rz {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 70vh;
+        min-width: 1000px;
+    }
+}

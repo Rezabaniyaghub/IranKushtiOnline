@@ -119,16 +119,16 @@ namespace New_WrestlingSchool.Areas.Identity.Pages.Account.Manage
 
             if (!is2faTokenValid)
             {
-                ModelState.AddModelError("Input.Code", "کد تأیید نامعتبر است.");
+                ModelState.AddModelError("Input.Code", "Verification code is invalid.");
                 await LoadSharedKeyAndQrCodeUriAsync(user);
                 return Page();
             }
 
             await _userManager.SetTwoFactorEnabledAsync(user, true);
             var userId = await _userManager.GetUserIdAsync(user);
-            _logger.LogInformation("User with ID '{UserId}'2FA را با یک برنامه احراز هویت فعال کرده است.", userId);
+            _logger.LogInformation("User with ID '{UserId}' has enabled 2FA with an authenticator app.", userId);
 
-            StatusMessage = "برنامه احراز هویت شما تأیید شده است.";
+            StatusMessage = "Your authenticator app has been verified.";
 
             if (await _userManager.CountRecoveryCodesAsync(user) == 0)
             {

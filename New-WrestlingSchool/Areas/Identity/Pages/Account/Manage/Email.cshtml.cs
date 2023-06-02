@@ -43,7 +43,10 @@ namespace New_WrestlingSchool.Areas.Identity.Pages.Account.Manage
         ///     This API supports the ASP.NET Core Identity default UI infrastructure and is not intended to be used
         ///     directly from your code. This API may change or be removed in future releases.
         /// </summary>
+
+        [Display(Name = "آیا ایمیل تایید شده است")]
         public bool IsEmailConfirmed { get; set; }
+
 
         /// <summary>
         ///     This API supports the ASP.NET Core Identity default UI infrastructure and is not intended to be used

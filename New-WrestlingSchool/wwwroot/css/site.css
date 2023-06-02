@@ -35,7 +35,6 @@ body {
     direction: rtl;
 }
 
-
 .image {
     background-image: url('../images/backgrounds/b1.jpeg');
     background-position: center;
@@ -65,6 +64,15 @@ body {
         font-size: 24px;
     }
 
+    @media (min-width: 768px) {
+        .table-responsive {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+    }
+ 
+
     /* Setting the width of the table elements to be replaced on a column */
     table td,
     table th {
@@ -84,6 +92,7 @@ body {
             width: 100%;
             margin-bottom: 10px;
         }
+
 }
 
 /* Styles for mobile and small devices */
@@ -113,3 +122,45 @@ body {
             margin-bottom: 10px;
         }
 }
+
+
+/* استایل برای نمایش روی دسکتاپ */
+@media (max-width: 767px) {
+    /* مخفی کردن عناصر <th> */
+    table thead th {
+        display: none;
+    }
+
+    /* نمایش محتوای ستون‌ها در سطرهای <tr> */
+    table tbody td:before {
+        content: attr(data-label);
+        float: right;
+        font-weight: bold;
+    }
+
+    /* فضای بین سطرها را کم کنید */
+    table tbody tr {
+        margin-bottom: 10px;
+    }
+
+    /* تغییر نحوه نمایش محتوای هر ستون */
+    table tbody td[data-label]:before {
+        content: attr(data-label);
+        float: right;
+        font-weight: bold;
+    }
+    .space {
+        margin-right: 5px;
+    }
+
+}
+
+
+
+
+
+
+
+
+
+

@@ -25,7 +25,7 @@ namespace New_WrestlingSchool
 
                 config.CreateMap<ClassRoom, ClassRoomModel>()
                 .ForMember(f => f.CreateDate, mf => mf.MapFrom(d => d.CreatedAt == null ? "تاریخ ثبت نام وجود ندارد" :
-                Convert.ToDateTime(d.CreatedAt).ToString("yyyy/MM/dd"/*, new CultureInfo("fa-IR"))*/)))
+                Convert.ToDateTime(d.CreatedAt).ToString("yyyy/MM/dd")))
                 .ForMember(d => d.SchoolName, mf => mf.MapFrom(s => s.School.Name));
 
 

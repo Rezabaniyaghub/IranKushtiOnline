@@ -41,7 +41,7 @@ namespace New_WrestlingSchool.Areas.Identity.Pages.Account.Manage
 
             if (!await _userManager.GetTwoFactorEnabledAsync(user))
             {
-                throw new InvalidOperationException($"نمی توان 2FA را برای کاربر غیرفعال کرد زیرا در حال حاضر فعال نیست.");
+                throw new InvalidOperationException($"Cannot disable 2FA for user as it's not currently enabled.");
             }
 
             return Page();
@@ -58,11 +58,11 @@ namespace New_WrestlingSchool.Areas.Identity.Pages.Account.Manage
             var disable2faResult = await _userManager.SetTwoFactorEnabledAsync(user, false);
             if (!disable2faResult.Succeeded)
             {
-                throw new InvalidOperationException($"هنگام غیرفعال کردن 2FA، خطای غیرمنتظره‌ای روی داد.");
+                throw new InvalidOperationException($"Unexpected error occurred disabling 2FA.");
             }
 
             _logger.LogInformation("User with ID '{UserId}' has disabled 2fa.", _userManager.GetUserId(User));
-            StatusMessage = "2fa غیر فعال شده است. هنگامی که یک برنامه احراز هویت را راه اندازی می کنید، می توانید 2fa را دوباره فعال کنید";
+            StatusMessage = "2fa has been disabled. You can reenable 2fa when you setup an authenticator app";
             return RedirectToPage("./TwoFactorAuthentication");
         }
     }

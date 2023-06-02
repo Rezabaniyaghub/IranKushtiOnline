@@ -12,8 +12,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace New_WrestlingSchool.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    [Migration("20230418064807_Create")]
-    partial class Create
+    [Migration("20230526142326_InitialCreate")]
+    partial class InitialCreate
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)

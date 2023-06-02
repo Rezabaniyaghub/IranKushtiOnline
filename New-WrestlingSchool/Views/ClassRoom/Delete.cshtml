@@ -27,8 +27,8 @@
                 <span class="input-group-text" id="inputGroup-sizing-sm">نام خانوادگی</span>
             </div>
             <input type="text" asp-for="LastName" disabled class="form-control" aria-label="LastName" aria-describedby="inputGroup-sizing-sm" />
-            <span asp-validation-for="LastName" class="text-danger"></span>
         </div>
+        <span asp-validation-for="LastName" class="text-danger"></span>
     </div>
     <div class="row col-md-3">
         <div class="input-group mb-3">
@@ -36,8 +36,8 @@
                 <span class="input-group-text" id="inputGroup-sizing-sm">تاریخ تولد</span>
             </div>
             <input type="date" asp-for="BirhDate" disabled class="form-control" aria-label="BirhDate" aria-describedby="inputGroup-sizing-sm" />
-            <span asp-validation-for="BirhDate" class="text-danger"></span>
         </div>
+        <span asp-validation-for="BirhDate" class="text-danger"></span>
     </div>
     <div class="row col-md-3">
         <div class="input-group mb-3">
@@ -45,8 +45,8 @@
                 <span class="input-group-text" id="inputGroup-sizing-sm">شماره تلفن</span>
             </div>
             <input type="tel" asp-for="PhoneNumber" disabled class="form-control" aria-label="PhoneNumber" aria-describedby="inputGroup-sizing-sm" />
-            <span asp-validation-for="PhoneNumber" class="text-danger"></span>
         </div>
+        <span asp-validation-for="PhoneNumber" class="text-danger"></span>
     </div>
     <div class="row col-md-3">
         <div class="input-group mb-3">
@@ -54,8 +54,8 @@
                 <span class="input-group-text" id="inputGroup-sizing-sm">کشور</span>
             </div>
             <input type="text" asp-for="Country" disabled class="form-control" aria-label="Country" aria-describedby="inputGroup-sizing-sm" />
-            <span asp-validation-for="Country" class="text-danger"></span>
         </div>
+        <span asp-validation-for="Country" class="text-danger"></span>
     </div>
     <div class="row col-md-3">
         <div class="input-group mb-3">
@@ -63,8 +63,8 @@
                 <span class="input-group-text" id="inputGroup-sizing-sm">نام باشگاه</span>
             </div>
             <select asp-for="SchoolId" disabled asp-items="@Model.SchoolSelectList" class="form-control" aria-label="SchoolId" aria-describedby="inputGroup-sizing-sm"></select>
-            <span asp-validation-for="SchoolId" class="text-danger"></span>
         </div>
+        <span asp-validation-for="SchoolId" class="text-danger"></span>
     </div>
     <div class="row col-md-3">
         <div class="input-group mb-3">

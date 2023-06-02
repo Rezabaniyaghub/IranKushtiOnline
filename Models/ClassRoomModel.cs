@@ -10,6 +10,7 @@ namespace Models
         [Required(ErrorMessage = "ورود {0} الزامی است")]
         [Display(Name = "توضیحات")]
         public string FirstName { get; set; }
+
         [Required(ErrorMessage = "ورود {0} الزامی است")]
         [Display(Name ="توضیحات")]
         public string LastName { get; set; }
@@ -21,6 +22,7 @@ namespace Models
         [Required(ErrorMessage = "ورود {0} الزامی است")]
         [Display(Name = "توضیحات")]
         public string Country { get; set; }
+
         [Required(ErrorMessage = "ورود {0} الزامی است")]
         [Display(Name = "توضیحات")]
         public Gender Gender { get; set; }
@@ -40,7 +42,9 @@ namespace Models
         [Required(ErrorMessage = "ورود {0} الزامی است")]
         [Display(Name = "توضیحات")]
         public string CreateDate { get; set; }
+
         public string SchoolName { get; set; }
+
         public List<SelectListItem> SchoolSelectList { get; set; }
     }
 }

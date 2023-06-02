@@ -77,6 +77,8 @@ namespace New_WrestlingSchool.Areas.Identity.Pages.Account
             /// </summary>
             [Required]
             [DataType(DataType.Password)]
+
+            [Display(Name = "کلمه عبور")]
             public string Password { get; set; }
 
             /// <summary>
@@ -126,12 +128,12 @@ namespace New_WrestlingSchool.Areas.Identity.Pages.Account
                 }
                 if (result.IsLockedOut)
                 {
-                    _logger.LogWarning("User account locked out.");
+                    _logger.LogWarning("حساب کاربری قفل شد");
                     return RedirectToPage("./Lockout");
                 }
                 else
                 {
-                    ModelState.AddModelError(string.Empty, "Invalid login attempt.");
+                    ModelState.AddModelError(string.Empty, "تلاش برای ورود نامعتبر است.");
                     return Page();
                 }
             }

@@ -104,13 +104,13 @@ namespace New_WrestlingSchool.Areas.Identity.Pages.Account
             returnUrl = returnUrl ?? Url.Content("~/");
             if (remoteError != null)
             {
-                ErrorMessage = $"Error from external provider: {remoteError}";
+                ErrorMessage = $"خطا از ارائه دهنده خارجی: {remoteError}";
                 return RedirectToPage("./Login", new { ReturnUrl = returnUrl });
             }
             var info = await _signInManager.GetExternalLoginInfoAsync();
             if (info == null)
             {
-                ErrorMessage = "Error loading external login information.";
+                ErrorMessage = "خطا در بارگیری اطلاعات ورود به سیستم خارجی.";
                 return RedirectToPage("./Login", new { ReturnUrl = returnUrl });
             }
 
@@ -148,7 +148,7 @@ namespace New_WrestlingSchool.Areas.Identity.Pages.Account
             var info = await _signInManager.GetExternalLoginInfoAsync();
             if (info == null)
             {
-                ErrorMessage = "Error loading external login information during confirmation.";
+                ErrorMessage = "خطا در بارگیری اطلاعات ورود به سیستم خارجی در حین تأیید.";
                 return RedirectToPage("./Login", new { ReturnUrl = returnUrl });
             }
 
@@ -176,8 +176,8 @@ namespace New_WrestlingSchool.Areas.Identity.Pages.Account
                             values: new { area = "Identity", userId = userId, code = code },
                             protocol: Request.Scheme);
 
-                        await _emailSender.SendEmailAsync(Input.Email, "Confirm your email",
-                            $"Please confirm your account by <a href='{HtmlEncoder.Default.Encode(callbackUrl)}'>clicking here</a>.");
+                        await _emailSender.SendEmailAsync(Input.Email, "ایمیل خود را تایید کنید",
+                            $"لطفاً حساب خود را تائید کنید <a href='{HtmlEncoder.Default.Encode(callbackUrl)}'>اینجا کلیک کنید</a>.");
 
                         // If account confirmation is required, we need to show the link if we don't have a real email sender
                         if (_userManager.Options.SignIn.RequireConfirmedAccount)
@@ -218,7 +218,7 @@ namespace New_WrestlingSchool.Areas.Identity.Pages.Account
         {
             if (!_userManager.SupportsUserEmail)
             {
-                throw new NotSupportedException("The default UI requires a user store with email support.");
+                throw new NotSupportedException("رابط کاربری پیش‌فرض به یک فروشگاه کاربر با پشتیبانی ایمیل نیاز دارد.");
             }
             return (IUserEmailStore<IdentityUser>)_userStore;
         }

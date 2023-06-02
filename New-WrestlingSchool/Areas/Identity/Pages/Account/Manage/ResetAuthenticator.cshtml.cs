@@ -59,7 +59,7 @@ namespace New_WrestlingSchool.Areas.Identity.Pages.Account.Manage
             _logger.LogInformation("User with ID '{UserId}' has reset their authentication app key.", user.Id);
 
             await _signInManager.RefreshSignInAsync(user);
-            StatusMessage = "کلید برنامه authenticator شما بازنشانی شده است، باید برنامه authenticator خود را با استفاده از کلید جدید پیکربندی کنید.";
+            StatusMessage = "Your authenticator app key has been reset, you will need to configure your authenticator app using the new key.";
 
             return RedirectToPage("./EnableAuthenticator");
         }

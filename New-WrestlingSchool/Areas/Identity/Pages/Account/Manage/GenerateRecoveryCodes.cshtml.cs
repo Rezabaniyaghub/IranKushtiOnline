@@ -75,7 +75,7 @@ namespace New_WrestlingSchool.Areas.Identity.Pages.Account.Manage
             RecoveryCodes = recoveryCodes.ToArray();
 
             _logger.LogInformation("User with ID '{UserId}' has generated new 2FA recovery codes.", userId);
-            StatusMessage = "شما کدهای بازیابی جدیدی ایجاد کرده اید.";
+            StatusMessage = "You have generated new recovery codes.";
             return RedirectToPage("./ShowRecoveryCodes");
         }
     }
