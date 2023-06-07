@@ -14,6 +14,7 @@ using Microsoft.AspNetCore.Identity.UI.Services;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.Extensions.Logging;
+using System.ComponentModel;
 
 namespace New_WrestlingSchool.Areas.Identity.Pages.Account
 {
@@ -67,17 +68,17 @@ namespace New_WrestlingSchool.Areas.Identity.Pages.Account
             ///     directly from your code. This API may change or be removed in future releases.
             /// </summary>
             [Required]
-            [EmailAddress]
-            [Display(Name ="ایمیل")]
+            // [EmailAddress]
+            [Display(Name = "ایمیل")]
+            [EmailAddress(ErrorMessage = "{0} صحیح نیست")]
             public string Email { get; set; }
 
             /// <summary>
             ///     This API supports the ASP.NET Core Identity default UI infrastructure and is not intended to be used
             ///     directly from your code. This API may change or be removed in future releases.
             /// </summary>
-            [Required]
-            [DataType(DataType.Password)]
-
+            [Required(ErrorMessage = "{0} الزامی است")]
+            [DataType(DataType.Password, ErrorMessage ="{0} صحیح نسیت")]
             [Display(Name = "کلمه عبور")]
             public string Password { get; set; }
 

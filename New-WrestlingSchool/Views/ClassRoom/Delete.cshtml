@@ -10,98 +10,101 @@
         @Message
     </div>
 }
-<form action="/ClassRoom/Delete" method="post" class=" col-lg-12 col-md-6 col-sm-12 offset-lg-4 offset-md-1 offset-sm-0 container">
-    <input type="hidden" name="@nameof(Model.Id)" value="@Model.Id" />
-    <div class="row col-md-3 ">
-        <div class="input-group mb-3">
-            <div class="input-group-prepend">
-                <span class="input-group-text" id="inputGroup-sizing-sm">نام</span>
+<div class="Rz">
+    <form action="/ClassRoom/Delete" method="post" class="container">
+        <input type="hidden" name="@nameof(Model.Id)" value="@Model.Id" />
+        <div class="col-md-12" align="center">
+            <div class="row col-md-3 ">
+                <div class="input-group mb-3">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text" id="inputGroup-sizing-sm">نام</span>
+                    </div>
+                    <input type="text" asp-for="FirstName" disabled class="form-control" aria-label="FirstName" aria-describedby="inputGroup-sizing-sm" />
+                    <span asp-validation-for="FirstName" class="text-danger"></span>
+                </div>
             </div>
-            <input type="text" asp-for="FirstName" disabled class="form-control" aria-label="FirstName" aria-describedby="inputGroup-sizing-sm" />
-            <span asp-validation-for="FirstName" class="text-danger"></span>
-        </div>
-    </div>
-    <div class="row col-md-3">
-        <div class="input-group mb-3">
-            <div class="input-group-prepend">
-                <span class="input-group-text" id="inputGroup-sizing-sm">نام خانوادگی</span>
+            <div class="row col-md-3">
+                <div class="input-group mb-3">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text" id="inputGroup-sizing-sm">نام خانوادگی</span>
+                    </div>
+                    <input type="text" asp-for="LastName" disabled class="form-control" aria-label="LastName" aria-describedby="inputGroup-sizing-sm" />
+                </div>
+                <span asp-validation-for="LastName" class="text-danger"></span>
             </div>
-            <input type="text" asp-for="LastName" disabled class="form-control" aria-label="LastName" aria-describedby="inputGroup-sizing-sm" />
-        </div>
-        <span asp-validation-for="LastName" class="text-danger"></span>
-    </div>
-    <div class="row col-md-3">
-        <div class="input-group mb-3">
-            <div class="input-group-prepend">
-                <span class="input-group-text" id="inputGroup-sizing-sm">تاریخ تولد</span>
+            <div class="row col-md-3">
+                <div class="input-group mb-3">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text" id="inputGroup-sizing-sm">تاریخ تولد</span>
+                    </div>
+                    <input type="date" asp-for="BirhDate" disabled class="form-control" aria-label="BirhDate" aria-describedby="inputGroup-sizing-sm" />
+                </div>
+                <span asp-validation-for="BirhDate" class="text-danger"></span>
             </div>
-            <input type="date" asp-for="BirhDate" disabled class="form-control" aria-label="BirhDate" aria-describedby="inputGroup-sizing-sm" />
-        </div>
-        <span asp-validation-for="BirhDate" class="text-danger"></span>
-    </div>
-    <div class="row col-md-3">
-        <div class="input-group mb-3">
-            <div class="input-group-prepend">
-                <span class="input-group-text" id="inputGroup-sizing-sm">شماره تلفن</span>
+            <div class="row col-md-3">
+                <div class="input-group mb-3">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text" id="inputGroup-sizing-sm">شماره تلفن</span>
+                    </div>
+                    <input type="tel" asp-for="PhoneNumber" disabled class="form-control" aria-label="PhoneNumber" aria-describedby="inputGroup-sizing-sm" />
+                </div>
+                <span asp-validation-for="PhoneNumber" class="text-danger"></span>
             </div>
-            <input type="tel" asp-for="PhoneNumber" disabled class="form-control" aria-label="PhoneNumber" aria-describedby="inputGroup-sizing-sm" />
-        </div>
-        <span asp-validation-for="PhoneNumber" class="text-danger"></span>
-    </div>
-    <div class="row col-md-3">
-        <div class="input-group mb-3">
-            <div class="input-group-prepend">
-                <span class="input-group-text" id="inputGroup-sizing-sm">کشور</span>
+            <div class="row col-md-3">
+                <div class="input-group mb-3">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text" id="inputGroup-sizing-sm">کشور</span>
+                    </div>
+                    <input type="text" asp-for="Country" disabled class="form-control" aria-label="Country" aria-describedby="inputGroup-sizing-sm" />
+                </div>
+                <span asp-validation-for="Country" class="text-danger"></span>
             </div>
-            <input type="text" asp-for="Country" disabled class="form-control" aria-label="Country" aria-describedby="inputGroup-sizing-sm" />
-        </div>
-        <span asp-validation-for="Country" class="text-danger"></span>
-    </div>
-    <div class="row col-md-3">
-        <div class="input-group mb-3">
-            <div class="input-group-prepend">
-                <span class="input-group-text" id="inputGroup-sizing-sm">نام باشگاه</span>
+            <div class="row col-md-3">
+                <div class="input-group mb-3">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text" id="inputGroup-sizing-sm">نام باشگاه</span>
+                    </div>
+                    <select asp-for="SchoolId" disabled asp-items="@Model.SchoolSelectList" class="form-control" aria-label="SchoolId" aria-describedby="inputGroup-sizing-sm"></select>
+                </div>
+                <span asp-validation-for="SchoolId" class="text-danger"></span>
             </div>
-            <select asp-for="SchoolId" disabled asp-items="@Model.SchoolSelectList" class="form-control" aria-label="SchoolId" aria-describedby="inputGroup-sizing-sm"></select>
-        </div>
-        <span asp-validation-for="SchoolId" class="text-danger"></span>
-    </div>
-    <div class="row col-md-3">
-        <div class="input-group mb-3">
-            <div class="input-group-prepend">
-                <span class="input-group-text" id="inputGroup-sizing-sm"> رده سنی</span>
-                <select asp-for="AgeRange" disabled class="form-control aria-label=" AgeRange" aria-describedby="inputGroup-sizing-sm">
-                    <span asp-validation-for="AgeRange" class="text-danger"></span>
-                    <option value="1">نونهالان</option>
-                    <option value="2">نوجوانان</option>
-                    <option value="3">بزرگسالان</option>
-                </select>
+            <div class="row col-md-3">
+                <div class="input-group mb-3">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text" id="inputGroup-sizing-sm"> رده سنی</span>
+                    </div>
+                    <select asp-for="AgeRange" disabled class="form-control aria-label=" AgeRange" aria-describedby="inputGroup-sizing-sm">
+                        <span asp-validation-for="AgeRange" class="text-danger"></span>
+                        <option value="1">نونهالان</option>
+                        <option value="2">نوجوانان</option>
+                        <option value="3">بزرگسالان</option>
+                    </select>
+                </div>
+            </div>
+            <div class="row col-md-3">
+                <div class="input-group mb-3">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text" id="inputGroup-sizing-sm"> جنسیت</span>
+                    </div>
+                    <select asp-for="Gender" disabled class="form-control aria-label=" Gender" aria-describedby="inputGroup-sizing-sm">
+                        <span asp-validation-for="Gender" class="text-danger"></span>
+                        <option value="1">مرد</option>
+                        <option value="2">زن</option>
+                        <option value="3">سایر</option>
+                    </select>
+                </div>
+            </div>
+            <div class="col-md-3 form-group">
+                <button type="submit" class="btn btn-danger btn-sm" data-toggle="tooltip" data-placement="right" title="حذف">
+                    <i class="fas fa-trash fa-3 btn-sm" aria-hidden="true"
+                       style="font-size:25px;color:aqua">
+                    </i>
+                    حذف
+                </button>
             </div>
         </div>
-    </div>
-    <div class="row col-md-6">
-        <div class="input-group mb-3">
-            <div class="input-group-prepend">
-                <span class="input-group-text" id="inputGroup-sizing-sm"> جنسیت</span>
-                <select asp-for="Gender" disabled class="form-control aria-label=" Gender" aria-describedby="inputGroup-sizing-sm">
-                    <span asp-validation-for="Gender" class="text-danger"></span>
-                    <option value="1">مرد</option>
-                    <option value="2">زن</option>
-                    <option value="3">سایر</option>
-                </select>
-            </div>
-        </div>
-    </div>
-    <div class="col-md-3 form-group">
-        <button type="submit" class="btn btn-danger btn-sm" data-toggle="tooltip" data-placement="right" title="حذف">
-            <i class="fas fa-trash fa-3 btn-sm" aria-hidden="true"
-               style="font-size:25px;color:aqua">
-            </i>
-            حذف
-        </button>
-    </div>
-</form>
-
+    </form>
+</div>
 @section Scripts {
     <partial name="_ValidationScriptsPartial" />
 }

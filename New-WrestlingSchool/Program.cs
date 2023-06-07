@@ -8,6 +8,7 @@ using Microsoft.EntityFrameworkCore;
 using New_WrestlingSchool;
 using New_WrestlingSchool.Data;
 using Microsoft.AspNetCore.Identity.UI.Services;
+using PersianIdentity;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -17,8 +18,8 @@ builder.Services.AddTransient<ISchoolRepository, SchoolRepository>();
 builder.Services.AddTransient<IClassRoomRepository, ClassRoomRepository>();
 builder.Services.AddTransient<ISchoolService, SchoolService>();
 builder.Services.AddTransient<IClassRoomService, ClassRoomService>();
-
 builder.Services.AddTransient<IEmailSender,MailService>();
+
 
 var connectionString = builder.Configuration.GetConnectionString("DefaultConnection");
 builder.Services.AddDbContext<ApplicationDbContext>(options =>
@@ -32,13 +33,28 @@ builder.Services.AddDbContext<AppDbContext>(options =>
 builder.Services.Configure<MailSettings>(builder.Configuration.GetSection("MailSettings"));
 
 
+
 builder.Services.AddDatabaseDeveloperPageExceptionFilter();
 
-builder.Services.AddDefaultIdentity<IdentityUser>(options => options.SignIn.RequireConfirmedAccount = true)
+
+builder.Services.AddDefaultIdentity<IdentityUser>(options =>
+{
+    options.SignIn.RequireConfirmedAccount = true;
+    options.Password.RequireDigit = true;
+    options.Password.RequireNonAlphanumeric = true;
+    options.Password.RequiredLength = 6;
+    options.Password.RequireLowercase = true;
+    options.Password.RequireUppercase = true;
+    options.SignIn.RequireConfirmedEmail = true;
+    options.Lockout.AllowedForNewUsers = true;
+    options.Lockout.DefaultLockoutTimeSpan = TimeSpan.FromMinutes(10);
+    options.Lockout.MaxFailedAccessAttempts = 3;
+    
+})
+
+    .AddErrorDescriber<LocalizedIdentityErrorDescriber>()
     .AddEntityFrameworkStores<ApplicationDbContext>();
 builder.Services.AddControllersWithViews();
-
-
 
 builder.Services.AddRazorPages()
     .AddRazorRuntimeCompilation();

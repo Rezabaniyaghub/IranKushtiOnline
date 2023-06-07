@@ -156,9 +156,15 @@ body {
 }
 
 
-
-
-
+@media (min-width: 991px) {
+    .Rz {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 70vh;
+        min-width: 1000px;
+    }
+}
 
 
 
