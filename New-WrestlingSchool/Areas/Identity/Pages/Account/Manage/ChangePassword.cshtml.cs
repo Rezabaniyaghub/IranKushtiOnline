@@ -52,7 +52,7 @@ namespace New_WrestlingSchool.Areas.Identity.Pages.Account.Manage
             ///     This API supports the ASP.NET Core Identity default UI infrastructure and is not intended to be used
             ///     directly from your code. This API may change or be removed in future releases.
             /// </summary>
-            [Required]
+            [Required (ErrorMessage = "فیلد رمز عبور فعلی الزامی است.")]
             [DataType(DataType.Password)]
             [Display(Name = "رمز عبور فعلی")]
             public string OldPassword { get; set; }
@@ -61,7 +61,7 @@ namespace New_WrestlingSchool.Areas.Identity.Pages.Account.Manage
             ///     This API supports the ASP.NET Core Identity default UI infrastructure and is not intended to be used
             ///     directly from your code. This API may change or be removed in future releases.
             /// </summary>
-            [Required]
+            [Required (ErrorMessage = "فیلد رمز عبور جدید الزامی است.")]
             [StringLength(100, ErrorMessage = "کلمه عبور باید حداقل 6 و حداکثر 100 کاراکتر باشد.", MinimumLength = 6)]
             [DataType(DataType.Password)]
             [Display(Name = "رمز عبور جدید")]
