@@ -49,7 +49,7 @@ builder.Services.AddDefaultIdentity<IdentityUser>(options =>
     options.Lockout.AllowedForNewUsers = true;
     options.Lockout.DefaultLockoutTimeSpan = TimeSpan.FromMinutes(10);
     options.Lockout.MaxFailedAccessAttempts = 3;
-    
+
 })
 
     .AddErrorDescriber<LocalizedIdentityErrorDescriber>()
