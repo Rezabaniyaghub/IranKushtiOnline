@@ -24,7 +24,6 @@ namespace New_WrestlingSchool.Controllers
         }
         #endregion
 
-      
         #region [Create]
         [HttpGet]
         public IActionResult Create()
@@ -88,5 +87,6 @@ namespace New_WrestlingSchool.Controllers
             return View(model);
         }
         #endregion
+
     }
 }

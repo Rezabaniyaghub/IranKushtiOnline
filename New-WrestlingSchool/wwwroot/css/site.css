@@ -1,4 +1,8 @@
-﻿@font-face {
+﻿body {
+    background-color: #b6ff001b !important
+}
+
+@font-face {
     font-family: vazir;
     font-style: normal;
     font-weight: 100;
@@ -71,7 +75,7 @@ body {
             align-items: center;
         }
     }
- 
+
 
     /* Setting the width of the table elements to be replaced on a column */
     table td,
@@ -92,7 +96,6 @@ body {
             width: 100%;
             margin-bottom: 10px;
         }
-
 }
 
 /* Styles for mobile and small devices */
@@ -149,10 +152,10 @@ body {
         float: right;
         font-weight: bold;
     }
+
     .space {
         margin-right: 5px;
     }
-
 }
 
 
@@ -166,7 +169,174 @@ body {
     }
 }
 
+@media (min-width: 991px) {
+    .Rb {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 40vh;
+        min-width: 1000px;
+    }
+}
 
 
+@media (max-width: 767px) {
+    .carousel-inner .carousel-item > div {
+        display: none;
+    }
+
+        .carousel-inner .carousel-item > div:first-child {
+            display: block;
+        }
+}
+
+.carousel-inner .carousel-item.active,
+.carousel-inner .carousel-item-next,
+.carousel-inner .carousel-item-prev {
+    display: flex;
+}
+
+/* medium and up screens */
+@media (min-width: 767px) {
+
+    .carousel-inner .carousel-item-end.active,
+    .carousel-inner .carousel-item-next {
+        transform: translateX(25%);
+    }
+
+    .carousel-inner .carousel-item-start.active,
+    .carousel-inner .carousel-item-prev {
+        transform: translateX(-25%);
+    }
+
+    @media (max-width: 767px) {
+        .footr {
+            height: auto;
+        }
+    }
+}
+
+@media (max-width: 767px) {
+    .carousel-inner .carousel-item img {
+        height: auto !important;
+        max-width: 100% !important;
+    }
+}
+
+.carousel-inner .carousel-item-end,
+.carousel-inner .carousel-item-start {
+    transform: translateX(0);
+}
+
+.carousel-inner{
+    transition:all 0.5s ease;
+}
+
+.navbar {
+    background: #235580 !important;
+    width: 100% !important;
+}
+
+.Te {
+    font: 14.500px 'dazhyar', Tahoma;
+    color: snow;/*
+    padding: 5px;
+    margin: 20px;*/
+}
+
+.Te  a{
+    font: 15px 'dazhyar', Tahoma;
+    color: snow;
+}
+.unline a{
+  text-decoration:none;
+}
+.footr {
+    width: 100%;
+    height: auto;
+    background-image: url('../images/backgrounds/footer.jpg');
+    padding: 15px;
+    margin: 0px auto 0;
+    position: absolute;
+    margin-bottom: 0 !important;
+}
 
 
+.main-footer {
+    margin: 0 auto;
+    width: 1500px;
+}
+
+.about {
+    font-weight: 600;
+    width: 310px;
+    height: 300px;
+    float: left;
+}
+
+    .about p {
+        font: 17px/2 'dazhyar', Tahoma;
+        color: #e2e2e2;
+        text-align: justify;
+    }
+
+.social {
+    width: 600px;
+    margin: 30px 150px;
+    float: right;
+}
+
+    .about h5, .social h5, .social h5 {
+        font: 19px 'dazhyar', Tahoma;
+        color: #e2e2e2;
+        padding: 5px;
+        margin: 20px auto;
+    }
+
+    .social ul li {
+        float: right;
+        margin: 10px 2px;
+    }
+
+        .social ul li img {
+            border-radius: 50%;
+        }
+
+.access {
+    width: 300px;
+    float: right;
+    margin-top: 35px;
+}
+
+    .access ul li a {
+        font: 16px/2 'dazhyar', Tahoma;
+        color: #e2e2e2;
+        margin: 5px;
+    }
+
+        .access ul li a:hover {
+            color: #4c7d89;
+        }
+
+.footer-bot {
+    width: 100%;
+    height: 50px;
+    background: #2C3e50;
+    border-radius: 10px;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    clear: both;
+    margin-bottom:auto;
+}
+
+.copyright {
+    margin: 15px 20px;
+    float: right;
+    color: snow;
+}
+
+.footer-bot .ui {
+    margin: 15px 20px;
+    float: left;
+    color: snow;
+}
