@@ -24,6 +24,11 @@ namespace New_WrestlingSchool.Controllers
             return View();
         }
 
+        public IActionResult TermsofUse()
+        {
+            return View();
+        }
+
         public IActionResult Privacy()
         {
             return View();
